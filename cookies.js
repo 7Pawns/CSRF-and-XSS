@@ -1,3 +1,5 @@
+
+// Sets a new cookie for a new user
 function setCookie(cname,cvalue,exdays) {
     const d = new Date();
     d.setTime(d.getTime() + (exdays*24*60*60*1000));
@@ -5,6 +7,7 @@ function setCookie(cname,cvalue,exdays) {
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
   }
   
+// retrieves cookie
 function getCookie(cname) {
 let name = cname + "=";
 let decodedCookie = decodeURIComponent(document.cookie);
@@ -21,6 +24,7 @@ for(let i = 0; i < ca.length; i++) {
 return "";
 }
 
+// Checks if cookie exists and if so uses it 
 function checkCookie() {
 let user = getCookie("username");
 if (user != "") {
@@ -31,4 +35,10 @@ if (user != "") {
         setCookie("username", user, 30);
     }
 }
+}
+
+// Checks what user is recognized as the one that made the request
+function whoami(){
+    let user = getCookie("username");
+    alert("Request made by " + user);
 }

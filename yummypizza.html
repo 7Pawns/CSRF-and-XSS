@@ -7,28 +7,44 @@
     <link rel="stylesheet" href="style.css">
     <title>Pizza</title>
     <script src="cookies.js"></script>
-
+    
 </head>
 <body onload="checkCookie()">
     <h1>Pizza Shop</h1>
     <h2>We have the best pizzas in the world for the biggest price!</h2>
+    <button onclick="whoami()">Who am I?</button>
     <div class="row">
         <div class="column">
           <img src="https://media.onebite.app/58/45/86/6b/5845866b-066d-4730-a7f1-979260128b12.jpg" alt="Snow" style="width:100%">
           <h1>Veggie Mess</h1>
-          <h1>100$</h1>
+          <h1 id="p1">100$</h1>
         </div>
         <div class="column">
           <img src="https://media.onebite.app/b1/a8/1d/41/b1a81d41-4d20-4f1b-8c78-4f3196e0eb4f.jpg" alt="Forest" style="width:100%">
           <h1>Marshmellow Delicacy</h1>
-          <h1>100$</h1>
+          <h1 id="p2">100$</h1>
         </div>
         <div class="column">
           <img src="https://media.onebite.app/72/8a/7f/4e/728a7f4e-20c1-4ea8-8feb-d9a35f38b5d8.jpg" alt="Mountains" style="width:100%">
           <h1>Todd's Old Pizza</h1>
-          <h1>100$</h1>
+          <h1 id="p3">100$</h1>
         </div>
       </div>
+
+      <script>
+        var params = {};
+        location.search.slice(1).split("&").forEach(function(pair) {
+        pair = pair.split("=");
+        params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+        });
+    </script>
+    <script>
+        if ("price" in params && "value" in params && whoami() == "segal"){
+            document.getElementById(params["price"]).innerHTML = params["value"];
+        }
+    </script>
+    
+
 
 
 </body>
