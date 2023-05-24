@@ -40,5 +40,5 @@ if (user != "") {
 // Checks what user is recognized as the one that made the request
 function whoami(){
     let user = getCookie("username");
-    alert("Request made by " + user);
+    return user;
 }
