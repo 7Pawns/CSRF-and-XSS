@@ -30,6 +30,7 @@
           <h1 id="p3">100$</h1>
         </div>
       </div>
+      
 
       <script>
         var params = {};
@@ -39,7 +40,7 @@
         });
     </script>
     <script>
-        if ("price" in params && "value" in params && whoami() == "segal"){
+        if ("price" in params && "value" in params && whoami() == "Todd"){
             document.getElementById(params["price"]).innerHTML = params["value"];
         }
     </script>
