@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css" />
-    <title>Snake Adoption 🐍</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <script src="utilities.js"></script>
+    {% block head %}{% endblock %}
+    
 </head>
 <body>
+    {% block body %}{% endblock %}
     <h1>The Official Snake Care and Adoption Site 🐍</h1>
+    <script>
+    var name = getName();
+    console.log(name);
+    </script>
     <div class="row">
         <div class="column">
           <img
@@ -38,5 +45,7 @@
           <h1 id="p3">Nothing is known about him.<br /> Maybe has ties with the Yakuza.</h1>
         </div>
       </div>
+      
+
 </body>
 </html>
