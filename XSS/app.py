@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     if request.method == 'POST':
         content = request.form['content']
-        if ('p1' in content or 'p2' in content or 'p3' in content):
+        if 'p1' in content or 'p2' in content or 'p3' in content:
             return content + ' Adopted!'
         else:
             return 'Not a valid snake'
