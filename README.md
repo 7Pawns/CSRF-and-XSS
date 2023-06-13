@@ -68,7 +68,7 @@ Note that this is just a very simple explanation to why it's extremely important
 if 'p1' in content or 'p2' in content or 'p3' in content:
     return content + ' Adopted!'
 ```
-To:
+To: 
 ```py
 if content in ['p1', 'p2', 'p3']:
     return content + ' Adopted!'
