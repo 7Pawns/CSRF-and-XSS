@@ -2,7 +2,7 @@
 Vulnerable websites that simulate the attacks using Flask.
 
 ## Initial Setup
-```shell
+```console
 pip install -r requirements.txt
 ```
 # CSRF - Client Side Request Forgery
@@ -13,7 +13,7 @@ The CSRF folder simualtes a basic attack on a price changing API.
 # Setup
 The easiest way to setup the simulation is to download the LiveServer extension in Visual Code, then start evil.html on it.   
 Then start app.py using:
-```shell
+```console
 Windows:
 py app.py
 
@@ -40,7 +40,7 @@ The XSS folder simulated a Reflected XSS attack with a poorly configured API.
 
 # Setup
 For this demonstration there is no need for the LiveServer, only run app.py.   
-```shell
+```console
 Windows:
 py app.py
 
