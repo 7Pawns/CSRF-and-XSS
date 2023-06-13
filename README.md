@@ -1,9 +1,21 @@
 # CSRF-and-XSS
 Vulnerable websites that simulate the attacks.
 
-## TODO:
-* Add simulation of Anti-CSRF tokens in the a clone of yummypizza.html   
-* Check the CSRF actually works correctly   
-* Add a simualtion for changing email address with CSRF   
-* Add a simulation for XSS   
-* Mix XSS with CSRF (?)
+## Initial Setup
+
+# CSRF
+
+## Premise
+The CSRF folder simualtes a basic attack on a price changing API.
+
+# Setup
+The easiest way to setup the simulation is to download the LiveServer extension in Visual Code, then start evil.html on it.   
+Then start app.py using:
+```shell
+Windows:
+py app.py
+
+Linux:
+python3 app.py
+```
+
