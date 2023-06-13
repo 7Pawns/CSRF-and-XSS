@@ -33,7 +33,7 @@ Now to evil.html, if the form there will be posted from the browser with the adm
    
 The Anti-CSRF Token solves this by adding an hidden field to the form in index.html with a randomly generated string. The hacker cannot guess the string and therefore cannot pass the request. Not including the field will Result in 400 Bad Request Error.
 
-# XSS - Cross Site Scripting
+# XSS - Cross-Site Scripting
 
 ## Premise 
 The XSS folder simulated a Reflected XSS attack with a poorly configured API.
@@ -73,6 +73,5 @@ To:
 if content in ['p1', 'p2', 'p3']:
     return content + ' Adopted!'
 ```
-
 
 
