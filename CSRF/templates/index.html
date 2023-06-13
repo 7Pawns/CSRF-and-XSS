@@ -8,19 +8,19 @@
 <h1>Pizza Shop</h1>
 <h2>We have the best pizzas in the world for the biggest price!</h2>
 
-{% if not request.cookies %}
+{% if not request.cookies['name'] %}
   <h3>What is your name?</h3>
   <form action="/setcookie" method="POST">
     <input type="text" name="name" id="name">
     <input type="submit" value="Login">
   </form>
 {% elif request.cookies['name'] == 'admin' %}
-  <h3>Admin API</h3>
+  <h3>Admin API - Changing Prices</h3>
   <form action="/api" method="POST">
-    <input type="text" name="price" id="price">
-    <input type="text" name="id" id="id">
+    <code>Price: </code><input type="text" name="price" id="price"><br />
+    <code>Pizza ID: </code><input type="text" name="id" id="id">
+    <input type="hidden" name="anti_csrf_token" id='anti_csrf_token' value="{{anticsrf}}">
     <input type="submit" value="submit">
-    <-- Remove this comment to add the anti CSRF tokens >
   </form>
 {% else %}
   <h3>Hello {{request.cookies['name']}}!</h3>
@@ -35,7 +35,7 @@
       style="width: 100%"
     />
     <h1>Veggie Mess</h1>
-    <h1 id="p1">100$</h1>
+    <h1 id="p1">{{prices['p1']}}</h1>
   </div>
   <div class="column">
     <img
@@ -44,7 +44,7 @@
       style="width: 100%"
     />
     <h1>Marshmallow Delicacy</h1>
-    <h1 id="p2">100$</h1>
+    <h1 id="p2">{{prices['p2']}}</h1>
   </div>
   <div class="column">
     <img
@@ -53,7 +53,7 @@
       style="width: 100%"
     />
     <h1>Todd's Old Pizza</h1>
-    <h1 id="p3">100$</h1>
+    <h1 id="p3">{{prices['p3']}}</h1>
   </div>
 </div>
 

